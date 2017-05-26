@@ -8,6 +8,22 @@ class Products
     @food_per_hectare = food_per_hectare
   end
 
+# ----- Class Methods ----- #
+
+
+
+
+
+
+# ----- Instance Methods ----- #
+
+  
+
+
+
+
+
+
 end
 
 # ----- End of Products class ----- #
