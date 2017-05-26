@@ -35,9 +35,18 @@ class Farm
       when 2 then harvest
       when 3 then status
       when 4 then relax
-      when 5 then exit     
+      when 5 then exit
     end
 
+    def field
+      print 'What kind of field is it: corn, or wheat?'
+      field_type = gets.chomp
+      print 'How large is the field in hectares?'
+      field_size = gets.chomp
+      # Field create formula goes here
+      puts "Added a #{field_type} field of #{field_size} hectares!"
+      puts
+    end
 
 
 
