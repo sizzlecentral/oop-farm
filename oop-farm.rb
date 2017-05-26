@@ -4,7 +4,6 @@
 class Farm
 
   require_relative 'oop-farm-products'
-  @@total_food = []
 
 # ----- Class Methods ----- #
 
@@ -52,7 +51,7 @@ class Farm
       # Formula for calculating harvest goes here
       # Harvesting this much food from this size of this type
       # Harvesting this much food from this size of this type
-      # The farm has harvested total food so far
+      Print "The farm has harvested #{Products.all} so far."
       puts
     end
 
@@ -60,7 +59,7 @@ class Farm
       # Formula for calculating status goes here
       # list field
       # list field
-      # The farm has harvested total food so far
+      print "The farm has harvested #{Products.all} so far."
       puts
     end
 
