@@ -44,12 +44,29 @@ class Farm
       print 'How large is the field in hectares?'
       field_size = gets.chomp
       # Field create formula goes here
-      puts "Added a #{field_type} field of #{field_size} hectares!"
+      print "Added a #{field_type} field of #{field_size} hectares!"
       puts
     end
 
+    def harvest
+      # Formula for calculating harvest goes here
+      # Harvesting this much food from this size of this type
+      # Harvesting this much food from this size of this type
+      # The farm has harvested total food so far
+      puts
+    end
 
+    def status
+      # Formula for calculating status goes here
+      # list field
+      # list field
+      # The farm has harvested total food so far
+      puts
+    end
 
+    def relax
+      # Lovely description of fields
+    end
 
 end
 
