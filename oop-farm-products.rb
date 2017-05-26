@@ -5,9 +5,7 @@ class Products
 
   @@total_food = []
 
-  def initialize(name, food_per_hectare)
-    @name = name
-    @food_per_hectare = food_per_hectare
+  def initialize
   end
 
 # ----- Class Methods ----- #
@@ -16,14 +14,11 @@ class Products
     @@total_food
   end
 
-
-
-
-
-
 # ----- Instance Methods ----- #
 
-
+  def field_description
+    print description.sample
+  end
 
 
 
@@ -33,3 +28,13 @@ class Products
 end
 
 # ----- End of Products class ----- #
+
+description = [
+"Smell you the smell of the corn on the stalk?
+Smell you the wheat where the bees were lately buzzing?",
+"I loafe and invite my soul, I lean and loafe at my ease
+observing a spear of summer grass.",
+"I breathe the fragrance myself and know it and like it,
+The distillation would intoxicate me also, but I shall
+not let it."
+]

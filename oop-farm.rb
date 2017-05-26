@@ -5,8 +5,6 @@ class Farm
 
   require_relative 'oop-farm-products'
 
-# ----- Class Methods ----- #
-
 # ----- Instance Methods ----- #
 
   def main_menu
@@ -49,27 +47,22 @@ class Farm
 
     def harvest
       # Formula for calculating harvest goes here
-      # Harvesting this much food from this size of this type
-      # Harvesting this much food from this size of this type
-      Print "The farm has harvested #{Products.all} so far."
+      # print "Harvesting #{harvest_food} food from #{field_size} hectare #{field_type} field."
+      Print "The farm has harvested #{Products.all} food so far."
       puts
     end
 
     def status
       # Formula for calculating status goes here
-      # list field
-      # list field
-      print "The farm has harvested #{Products.all} so far."
+      # print "#{field_type} field is #{field_size} hectares."
+      print "The farm has harvested #{Products.all} food so far."
       puts
     end
 
     def relax
-      # Lovely description of fields
+      @field_description
     end
 
 end
 
 # ----- End of Farm class ----- #
-
-corn = Product.new("Corn", 20)
-wheat = Product.new("Wheat", 30)
