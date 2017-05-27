@@ -8,6 +8,8 @@ class Field
     @food_per_hectare = 0
   end
 
+end
+
 # ----- End of Field class ----- #
 
 class Corn < Field

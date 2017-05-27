@@ -6,6 +6,10 @@ class Farm
   require_relative 'oop-farm-products'
   @@total_food = []
 
+  def initialize(name)
+    @name = name
+  end
+
 # ----- Class Methods ----- #
 
   def self.all
@@ -22,7 +26,7 @@ class Farm
   def main_menu
     while true
       print_main_menu
-      user_selected = gets
+      user_selected = gets.downcase
       call_option(user_selected)
     end
   end
@@ -45,6 +49,7 @@ class Farm
       when 'relax'    then relax
       when 'exit'     then exit_program
     end
+  end
 
     def field
       print 'What kind of field is it: corn, or wheat?'
@@ -58,7 +63,7 @@ class Farm
       elsif field_type == 'wheat'
         wheat_field = Wheat.new(field_size)
         @@total_food << wheat_field
-      else exit
+      else print 'Please try again.'
       end
 
       print "Added a #{field_type} field of #{field_size} hectares!"
@@ -74,8 +79,9 @@ class Farm
     end
 
     def status
-      # Formula for calculating status goes here
-      # print "#{field_type} field is #{field_size} hectares."
+      @@total_food.each do |field|
+        print "#{field.class} field is #{field_size} hectares."
+      end
       print "The farm has harvested #{Farm.all} food so far."
       puts
     end
