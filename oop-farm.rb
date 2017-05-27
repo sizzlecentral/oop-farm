@@ -4,103 +4,69 @@
 class Farm
 
   require_relative 'oop-farm-products'
-  @@total_food = []
 
   def initialize(name)
     @name = name
   end
 
-# ----- Class Methods ----- #
-
-  def self.all
-    food = []
-    @@total_food.each do |field|
-      food_per_field = field.field_size * field.food_per_hectare
-      food << food_per_field
-    end
-    food.sum
-  end
-
-# ----- Instance Methods ----- #
-
   def main_menu
     while true
       print_main_menu
-      user_selected = gets.downcase
+      user_selected = gets.to_i
       call_option(user_selected)
     end
   end
 
   def print_main_menu
     puts 'Options:'
-    puts 'field'
-    puts 'harvest'
-    puts 'status'
-    puts 'relax'
-    puts 'exit'
-    puts
+    puts '1 - field'
+    puts '2 - harvest'
+    puts '3 - status'
+    puts '4 - relax'
+    puts '5 - exit'
+    puts 'Please enter a number'
   end
 
   def call_option(user_selected)
     case user_selected
-      when 'field'    then field
-      when 'harvest'  then harvest
-      when 'status'   then status
-      when 'relax'    then relax
-      when 'exit'     then exit_program
+      when 1 then field
+      when 2 then harvest
+      when 3 then status
+      when 4 then relax
+      when 5 then exit_program
     end
   end
 
     def field
-      print 'What kind of field is it: corn, or wheat?'
-      field_type = gets.chomp
-      print 'How large is the field in hectares?'
+      puts 'What kind of field is it: corn, or wheat?'
+      type = gets.chomp
+      puts 'How large is the field in hectares?'
       field_size = gets.chomp
-
-      if field_type == 'corn'
-        corn_field = Corn.new(field_size)
-        @@total_food << corn_field
-      elsif field_type == 'wheat'
-        wheat_field = Wheat.new(field_size)
-        @@total_food << wheat_field
-      else print 'Please try again.'
-      end
-
-      print "Added a #{field_type} field of #{field_size} hectares!"
+      Field.field(type, field_size)
       puts
     end
 
     def harvest
-      @@total_food.each do |field|
-        print "Harvesting #{field.field_size * field.food_per_hectare} food from #{field.field_size} hectare #{field.class} field."
-      end
-      print "The farm has harvested #{Farm.all} food so far."
+      Field.harvest_food
       puts
     end
 
     def status
-      @@total_food.each do |field|
-        print "#{field.class} field is #{field_size} hectares."
-      end
-      print "The farm has harvested #{Farm.all} food so far."
+      Field.status
       puts
     end
 
     def relax
       description = [
-      "Smell you the smell of the corn on the stalk?
-      Smell you the wheat where the bees were lately buzzing?",
-      "I loafe and invite my soul, I lean and loafe at my ease
-      observing a spear of summer grass.",
-      "I breathe the fragrance myself and know it and like it,
-      The distillation would intoxicate me also, but I shall
-      not let it."
+      "Smell you the smell of the corn on the stalk?  Smell you the wheat where the bees were lately buzzing?",
+      "I loafe and invite my soul, I lean and loafe at my ease observing a spear of summer grass.",
+      "I breathe the fragrance myself and know it and like it, The distillation would intoxicate me also, but I shall not let it."
       ]
-      print description.sample
+      puts description.sample
     end
 
     def exit_program
-      print "Exiting..."
+      puts "Exiting..."
       exit
     end
 
