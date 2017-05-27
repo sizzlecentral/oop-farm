@@ -1,40 +1,33 @@
 # OOP Farm Products
 # -----------------
 
-class Products
+class Field
 
-  @@total_food = []
-
-  def initialize
+  def initialize(field_size)
+    @field_size = field_size
+    @food_per_hectare = 0
   end
 
-# ----- Class Methods ----- #
+# ----- End of Field class ----- #
 
-  def self.all
-    @@total_food
+class Corn < Field
+
+  def initialize(field_size)
+    @field_size = field_size
+    @food_per_hectare = 20
   end
-
-# ----- Instance Methods ----- #
-
-  def field_description
-    print description.sample
-  end
-
-
-
-
-
 
 end
 
-# ----- End of Products class ----- #
+# ----- End of Corn class ----- #
 
-description = [
-"Smell you the smell of the corn on the stalk?
-Smell you the wheat where the bees were lately buzzing?",
-"I loafe and invite my soul, I lean and loafe at my ease
-observing a spear of summer grass.",
-"I breathe the fragrance myself and know it and like it,
-The distillation would intoxicate me also, but I shall
-not let it."
-]
+class Wheat < Field
+
+  def initialize(field_size)
+    @field_size = field_size
+    @food_per_hectare = 30
+  end
+
+end
+
+# ----- End of Wheat class ----- #
